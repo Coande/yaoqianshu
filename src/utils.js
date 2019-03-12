@@ -7,7 +7,9 @@ module.exports = {
    */
   findImageByName(name, threshold) {
     try {
-      const templ = images.read(`./res/${name}`);
+      const context = require.context('./res', false, /\.png$/);
+      const imageUrl = context(`./${name}`);
+      const templ = images.read(imageUrl);
       if (!templ) {
         throw new Error();
       }
