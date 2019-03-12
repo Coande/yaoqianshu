@@ -1,0 +1,16 @@
+{
+  "assets": [],
+  "build": {
+    "build_id": "194B12D7-37",
+    "build_number": 37,
+    "build_time": 1551177179300
+  },
+  "useFeatures": [],
+  "icon": "res/logo.png",
+  "main": "main.js",
+  "name": "聊天宝摇钱树",
+  "packageName": "com.e12e.liaotianbaoyaoqianshu",
+  "scripts": {},
+  "versionCode": 1,
+  "versionName": "1.0.0"
+}

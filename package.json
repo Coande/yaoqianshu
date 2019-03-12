@@ -1,0 +1,35 @@
+{
+  "name": "yaoqianshu",
+  "version": "1.0.0",
+  "description": "聊天宝摇钱树脚本",
+  "main": "main.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coande/yaoqianshu.git"
+  },
+  "keywords": [
+    "聊天宝",
+    "摇钱树"
+  ],
+  "author": "Coande",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coande/yaoqianshu/issues"
+  },
+  "homepage": "https://github.com/Coande/yaoqianshu#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "eslint": "^5.15.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5"
+  }
+}

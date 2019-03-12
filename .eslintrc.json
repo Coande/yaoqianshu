@@ -1,0 +1,46 @@
+{
+  "env": {
+    "commonjs": true,
+    "es6": true
+  },
+  "extends": "airbnb-base",
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "text": "readonly",
+    "sleep": "readonly",
+    "textContains": "readonly",
+    "back": "readonly",
+    "click": "readonly",
+    "textMatches": "readonly",
+    "open": "readonly",
+    "http": "readonly",
+    "storages": "readonly",
+    "files": "readonly",
+    "confirm": "readonly",
+    "exit": "readonly",
+    "alert": "readonly",
+    "toastLog": "readonly",
+    "requestScreenCapture": "readonly",
+    "launchApp": "readonly",
+    "auto": "readonly",
+    "waitForActivity": "readonly",
+    "device": "readonly",
+    "images": "readonly",
+    "captureScreen": "readonly",
+    "importClass": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "no-console": "off",
+    "no-alert": "off",
+    "no-restricted-globals": "off",
+    "no-plusplus": "off",
+    "prefer-template": "off"
+  }
+}
