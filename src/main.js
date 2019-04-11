@@ -106,6 +106,7 @@ try {
   }
 
   toastLog('开始了，请放下手机等待操作结束');
+
   // 需要root，避免使用root
   // shell('am force-stop com.bullet.messenger', true);
   const startTime = new Date().getTime();
@@ -130,6 +131,8 @@ try {
   if (!scrollableObj) {
     throw new Error('找不到可滚动组件');
   }
+
+  // 滚动到底部（摇钱树入口处于页面底部）
   swipe(100, 1000, 100, 0, 10);
   sleep(500);
 
@@ -170,14 +173,10 @@ try {
   // alert('异常终止', error);
   try {
     if (storage.get('uploadWhenError')) {
-      // 尽管已经同意过，也需要先申请权限
-      if (!requestScreenCapture()) {
-        exit();
-      }
       captureScreen(capImagePath);
       const logId = logger.postLog(mLogger.getLog().log).body.json().objectId;
       mLogger.log('logId=', logId);
-      const fileId = logger.postScreenCapture().body.json().objectId;
+      const fileId = JSON.parse(logger.postScreenCapture()).objectId;
       mLogger.log('fileId=', fileId);
       const res = logger.updateScriptLog(logId, fileId);
       mLogger.log('反馈完毕', res.body.string());

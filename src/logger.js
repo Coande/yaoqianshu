@@ -13,21 +13,21 @@ module.exports = {
       error: '',
     };
     return {
-      log(str) {
-        logInfo.log += `${str}\n`;
-        console.log(str);
+      log(...args) {
+        logInfo.log += `${args.join('')}\n`;
+        console.log(...args);
       },
-      info(str) {
-        logInfo.info += `${str}\n`;
-        console.info(str);
+      info(...args) {
+        logInfo.info += `${args.join('')}\n`;
+        console.info(...args);
       },
-      warn(str) {
-        logInfo.warn += `${str}\n`;
-        console.warn(str);
+      warn(...args) {
+        logInfo.warn += `${args.join('')}\n`;
+        console.warn(...args);
       },
-      error(str) {
-        logInfo.error += `${str}\n`;
-        console.error(str);
+      error(...args) {
+        logInfo.error += `${args.join('')}\n`;
+        console.error(...args);
       },
       getLog() {
         return logInfo;
@@ -74,11 +74,6 @@ module.exports = {
 
     const url = config.baseUrl + '/files/screenCapture.png';
 
-    if (!requestScreenCapture()) {
-      alert('需要截图权限', '需要截图权限来进行识图');
-      toastLog('没有获取到截图权限，脚本终止');
-      exit();
-    }
     const capImage = captureScreen();
 
     const fileBody = RequestBody.create(MediaType.parse('image/png'), images.toBytes(capImage));
@@ -100,7 +95,9 @@ module.exports = {
       .writeTimeout(150, TimeUnit.SECONDS)
       .build();
     const res = okHttpClient.newCall(request).execute();
-    return res;
+    const resBody = res.body().string();
+    res.close();
+    return resBody;
   },
 
   /**
