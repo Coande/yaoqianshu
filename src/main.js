@@ -45,7 +45,7 @@ function scrollDownToFind() {
   } else {
     mLogger.log('找不到去Ta家按钮');
     mLogger.log('尝试查找邀请按钮');
-    if (utils.findImageByName('invite.jpg')) {
+    if (utils.findImageByName('invite.png')) {
       mLogger.log('找到了邀请按钮，即到底了');
       return;
     } if (++nothingCount === 20) {
@@ -130,8 +130,9 @@ try {
   if (!scrollableObj) {
     throw new Error('找不到可滚动组件');
   }
-  scrollableObj.scrollDown();
+  swipe(100, 1000, 100, 0, 10);
   sleep(500);
+
   const treePos = utils.findImageByName('yaoqianshu.png', 0.5);
   if (!treePos) {
     throw new Error('找不到摇钱树入口');
@@ -158,7 +159,11 @@ try {
   const endTime = new Date().getTime();
   const useTimeSec = (endTime - startTime) / 1000;
   toastLog(`正常结束，为你节约${useTimeSec}s`);
-  launchApp('聊天宝摇钱树');
+  // 退出到聊天宝
+  back();
+  sleep(500);
+  // 退出聊天宝
+  back();
   // alert('正常结束', '为你节约' + useTimeSec + 's');
 } catch (error) {
   toastLog(`异常终止：${error}`);

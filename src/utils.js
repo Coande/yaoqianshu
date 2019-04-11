@@ -19,7 +19,7 @@ module.exports = {
       });
       return pos;
     } catch (error) {
-      throw new Error('图片缺失：', files.cwd(), name);
+      throw new Error(`图片缺失：${files.cwd()}/${name}`);
     }
   },
   /**

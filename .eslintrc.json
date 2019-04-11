@@ -28,7 +28,8 @@
     "device": "readonly",
     "images": "readonly",
     "captureScreen": "readonly",
-    "importClass": "readonly"
+    "importClass": "readonly",
+    "swipe": "readonly"
   },
   "parserOptions": {
     "ecmaVersion": 2018,

@@ -19,9 +19,6 @@ module.exports = {
             presets: [
               [
                 '@babel/env',
-                {
-                  useBuiltIns: 'usage',
-                },
               ],
             ],
             sourceMap: true,
