@@ -116,6 +116,7 @@ try {
   // alert('请确保在聊天宝主界面');
   waitForActivity('com.smartisan.flashim.main.activity.MainActivity');
   mLogger.log('界面加载完毕');
+  click('我的');
   while (!click('领钱'));
   mLogger.log('点击了零钱');
   textContains('我的金币').waitFor();
@@ -162,6 +163,9 @@ try {
   const endTime = new Date().getTime();
   const useTimeSec = (endTime - startTime) / 1000;
   toastLog(`正常结束，为你节约${useTimeSec}s`);
+  // 退出到领钱
+  back();
+  sleep(500);
   // 退出到聊天宝
   back();
   sleep(500);
